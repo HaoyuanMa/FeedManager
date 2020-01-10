@@ -12,6 +12,7 @@ namespace Feed_Manager.Models
 
         [Key]
         public int RssId { get; set; }
+        public String Name { get; set; }
         public String Url { get; set; }
         public String UserName { get; set; }
     }

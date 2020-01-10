@@ -103,13 +103,10 @@ namespace Feed_Manager
                 {
                     html += "<li><a href='javascript:void(0)'class='fvt-a' id = 'fvt-a-" + f.Name.ToString() +
                         "'> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
-                        "'fas fa-angle-right'" +
+                        "'fas fa-star'" +
                         "></i> &nbsp&nbsp " +
                         f.Name.ToString() +
-                        "</a>" +
-                        "<ul id='fvt-u-" + f.Name.ToString() +
-                        "'></ul>" +
-                        "</ li >";
+                        "</a></ li >";
                 }
             });
             return html;
@@ -132,7 +129,7 @@ namespace Feed_Manager
                         c.Name.ToString() +
                         "</a>" +
                         "<ul id='cty-u-"+ c.Name.ToString() +
-                        "'></ul>" +
+                        "' style='display:none'></ul>" +
                         "</ li >";
                 }
             });

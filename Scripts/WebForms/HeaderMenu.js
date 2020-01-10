@@ -31,7 +31,7 @@
         var name = prompt("分类名称：", "新分类");
         
         var html = "";
-        html += "<li><a href=''>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
+        html += "<li><a href='javascript:void(0)'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
             "'fas fa-angle-right'" +
             "></i> &nbsp&nbsp " +
             name +
@@ -55,7 +55,7 @@
         var name = prompt("收藏夹名称：", "新收藏夹");
         var uname = $('#musername').html();
         var html = "";
-        html += "<li><a href=''>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
+        html += "<li><a href='javascript:void(0)'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
             "'fas fa-angle-right'" +
             "></i> &nbsp&nbsp " +
             name +
@@ -68,8 +68,29 @@
        
     })
 
-    $('.cty-a').each().click(function () {
-        var ctyid = $(this).attr('id');
+    $('.cty-a').each(function () {
+        $(this).click(function () {
+            var ctyid = $(this).attr('id');
+            var ctyname = String(ctyid).substring(6);
+            var uname = $('#musername').html();
+            var ulid = '#cty-u-' + ctyname;
+            if ($(ulid).css('display') != 'none') {
+                $(ulid).toggle();
+            }
+            else {
+                if ($(ulid).hasClass('loaded')) {
+                    $(ulid).toggle();
+                }
+                else {
+                    $.get('/GetCategory.ashx', { 'ctyname': ctyname, 'uname': uname }, function (date) {
+                        $(ulid).append(date);
+                        $(ulid).addClass('loaded');
+                        $(ulid).toggle();
+                    })
+                }
+            }
+        })
+
     })
     
 

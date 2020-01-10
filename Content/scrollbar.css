@@ -28,7 +28,7 @@
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    width: auto;
+    width: 250px;
     z-index: 100;
     position: fixed;
     min-height:100%
@@ -72,7 +72,7 @@
     border-bottom: none;
     height: 61px;
     position: relative;
-    width: calc(100% - 250px);
+    width: calc(100% - 270px);
     float: right
 }
 
@@ -88,7 +88,7 @@
 .page-inner {
     position: relative;
     padding: 30px;
-    width: calc(100% - 250px);
+    width: calc(100% - 270px);
     float: right
 }
 

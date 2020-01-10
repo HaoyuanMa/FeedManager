@@ -55,18 +55,21 @@ namespace Feed_Manager.Models
         private static Rss rss0 = new Rss
         {
             RssId = 0,
+            Name = "mhy",
             Url = "http://www.ruanyifeng.com/blog/atom.xml",
             UserName = "test@test.com"
         };
         private static Rss rss1 = new Rss
         {
             RssId = 1,
+            Name = "mhy",
             Url = "http://www.ruanyifeng.com/blog/atom.xml",
             UserName = "test@test.com"
         };
         private static Rss rss2 = new Rss
         {
             RssId = 2,
+            Name = "mhy",
             Url = "http://www.ruanyifeng.com/blog/atom.xml",
             UserName = "test@test.com"
         };
