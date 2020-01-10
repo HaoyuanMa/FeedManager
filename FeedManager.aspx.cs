@@ -3,10 +3,12 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel.Syndication;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml;
 
 namespace Feed_Manager
 {
@@ -84,6 +86,8 @@ namespace Feed_Manager
                     HttpContext.Current.User.Identity.Name;
                 }
                 musername.InnerText = HttpContext.Current.User.Identity.Name;
+
+         
             }
             else
             {
@@ -91,6 +95,7 @@ namespace Feed_Manager
             }
             
         }
+
 
         public String LoadFavourites()
         {
@@ -106,7 +111,7 @@ namespace Feed_Manager
                         "'fas fa-star'" +
                         "></i> &nbsp&nbsp " +
                         f.Name.ToString() +
-                        "</a></ li >";
+                        "</a></li >";
                 }
             });
             return html;
@@ -130,7 +135,7 @@ namespace Feed_Manager
                         "</a>" +
                         "<ul id='cty-u-"+ c.Name.ToString() +
                         "' style='display:none'></ul>" +
-                        "</ li >";
+                        "</li >";
                 }
             });
             return html;

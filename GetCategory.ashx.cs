@@ -23,8 +23,8 @@ namespace Feed_Manager
             
             foreach(Rss r in category.Rsses)
             {
-                html += "<li><a href='javascript:void(0)'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + r.Name.ToString() +
-                       "</a></ li >";
+                html += "<li><a href='javascript:void(0)'class='rss-a' id='rssid-"+r.RssId.ToString()+"'> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp " + r.Name.ToString() +
+                       " </a></li >";
             }
    
             context.Response.ContentType = "text/plain";

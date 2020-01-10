@@ -95,3 +95,13 @@
 .page-header.collapsed-sidebar , .page-inner.collapsed-sidebar  {
     width: calc(100%)
 }
+
+table {
+    table-layout: fixed;
+}
+
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
