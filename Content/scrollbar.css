@@ -1,0 +1,97 @@
+﻿.secondary-sidebar-menu .accordion-menu {
+    margin-top: 23px
+}
+
+.secondary-sidebar-menu::-webkit-scrollbar {
+    height: 12px;
+
+}
+.secondary-sidebar-menu::-webkit-scrollbar-thumb:vertical {
+    background-color: transparent;
+    border-radius: 6px;
+}
+
+.secondary-sidebar-menu:hover::-webkit-scrollbar-thumb:vertical {
+    background-color: rgba(0, 0, 0, 0.15);
+    border: 3px solid #f6f7f8;
+}
+
+.secondary-sidebar-menu::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+ .secondary-sidebar-menu {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+    background-color: #f6f7f8;
+    border-right: 1px solid #efefef;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: auto;
+    z-index: 100;
+    position: fixed;
+    min-height:100%
+}
+.popbar {
+    position: absolute !important;
+    height: auto !important;
+    top: 10%;
+    transform: translateY(-10%)
+}
+
+.profile-menu a img {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px
+}
+
+.profile-menu a {
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,.1)
+}
+
+.account-menu{
+    background-color:cornsilk;
+}
+
+.account-menu li:first-child{
+    padding-top:24px;
+    padding-bottom:12px;
+}
+
+    .account-menu li {
+        padding-top: 12px;
+        padding-bottom: 24px;
+    }
+
+.page-header {
+    padding-bottom: 0;
+    margin: 0;
+    border-bottom: none;
+    height: 61px;
+    position: relative;
+    width: calc(100% - 250px);
+    float: right
+}
+
+.page-content {
+    min-height: 56px;
+    vertical-align: bottom;
+    background: #f1f3f6;
+    float: right;
+    width: calc(100% - 61px);
+    margin-left: 61px
+}
+
+.page-inner {
+    position: relative;
+    padding: 30px;
+    width: calc(100% - 250px);
+    float: right
+}
+
+.page-header.collapsed-sidebar , .page-inner.collapsed-sidebar  {
+    width: calc(100%)
+}
