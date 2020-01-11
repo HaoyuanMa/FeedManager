@@ -52,11 +52,11 @@ $(document).ready(function () {
         var name = prompt("分类名称：", "新分类");
         
         var html = "";
-        html += "<li><a href='javascript:void(0)' class='cty-a' id='cty-a-" + name + "'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
-            "'fa fa-angle-right'" +
-            "></i> &nbsp&nbsp " +
-            name +
-            "</a></ li >";
+        html += "<li><a href='javascript:void(0)' class='cty-a' id='cty-a-" + name +
+            "'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
+            "'fa fa-angle-right'" + "></i> &nbsp&nbsp " + name +
+            "</a><ul id='cty-u-" + name +
+            "'style='display:none'></ul></ li >";
         if (name) {
 
             $.post("/AddCategory.ashx?str="+name+'&uname='+uname+'&type=cty');
@@ -89,41 +89,39 @@ $(document).ready(function () {
        
     })
 
-    $('.cty-a').each(function () {
-        $(this).click(function () {
+  
 
-            if (currentget) {
-                currentget.abort();
-                currentget = null;
-            }
-            var ctyid = $(this).attr('id');
-            var ctyname = String(ctyid).substring(6);
-            var uname = $('#musername').html();
-            var ulid = '#cty-u-' + ctyname;
-            if ($(ulid).css('display') != 'none') {
+    $('#rss-father').on('click', '.cty-a', function () {
+
+        if (currentget) {
+            currentget.abort();
+            currentget = null;
+        }
+        var ctyid = $(this).attr('id');
+        var ctyname = String(ctyid).substring(6);
+        var uname = $('#musername').html();
+        var ulid = '#cty-u-' + ctyname;
+        if ($(ulid).css('display') != 'none') {
+            $(ulid).toggle();
+        }
+        else {
+
+            if ($(ulid).hasClass('loaded')) {
                 $(ulid).toggle();
             }
             else {
 
-                if ($(ulid).hasClass('loaded')) {
-                    $(ulid).toggle();
-                }
-                else {
-                
-                    currentget = $.ajax({
-                        url: '/GetCategory.ashx?uname=' + uname + '&ctyname=' + ctyname,
-                        type: 'get',
-                        success: function (date) {
-                            $(ulid).append(date);
-                            $(ulid).addClass('loaded');
-                            $(ulid).toggle();
-                        }
-                   })
-                }
+                currentget = $.ajax({
+                    url: '/GetCategory.ashx?uname=' + uname + '&ctyname=' + ctyname,
+                    type: 'get',
+                    success: function (date) {
+                        $(ulid).append(date);
+                        $(ulid).addClass('loaded');
+                        $(ulid).toggle();
+                    }
+                })
             }
-            
-        })
-
+        }
     })
     
     $('#rss-father').on('click','.rss-a', function () {
@@ -204,42 +202,37 @@ $(document).ready(function () {
 
     })
 
-    $('.fvt-a').each(function () {
+    $('#fvt-father').on('click', '.fvt-a', function () {
 
-        $(this).click(function () {
+        if (currentget) {
+            currentget.abort();
+            currentget = null;
+        }
 
-            if (currentget) {
-                currentget.abort();
-                currentget = null;
+        $('#main-wrapper').empty();
+        $('#main-wrapper').append('<a id ="loading"><i class="fa fa-spinner"></i>Loading...</a>');
+
+        var fvt = $(this).attr('id');
+        var fvtid = String(fvt).substring(6);
+        var uname = $('#musername').html();
+
+        //$.ajaxSettings.async = false;
+        /* currentget = $.get('/GetRss.ashx', { 'rssid': rssid, 'uname': uname }, function (date) {
+             $('#loading').remove();
+             $('#main-wrapper').append(date);
+         });*/
+
+        currentget = $.ajax({
+            url: '/GetFavourite.ashx?uname=' + uname + '&fvtid=' + fvtid,
+            type: 'get',
+            success: function (date) {
+                $('#loading').remove();
+                $('#main-wrapper').append(date);
             }
-
-            $('#main-wrapper').empty();
-            $('#main-wrapper').append('<a id ="loading"><i class="fa fa-spinner"></i>Loading...</a>');
-
-            var fvt = $(this).attr('id');
-            var fvtid = String(fvt).substring(6);
-            var uname = $('#musername').html();
-
-            //$.ajaxSettings.async = false;
-            /* currentget = $.get('/GetRss.ashx', { 'rssid': rssid, 'uname': uname }, function (date) {
-                 $('#loading').remove();
-                 $('#main-wrapper').append(date);
-             });*/
-
-            currentget = $.ajax({
-                url: '/GetFavourite.ashx?uname=' + uname + '&fvtid=' + fvtid,
-                type: 'get',
-                success: function (date) {
-                    $('#loading').remove();
-                    $('#main-wrapper').append(date);
-                }
-            });
-        //$.ajaxSettings.async = true;
-        //currentget = null;
-        })
-
+        });
     })
 
+   
 
 
 })

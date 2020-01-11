@@ -111,13 +111,9 @@ namespace Feed_Manager
 
             //读出数据存入可变字符中
             String str = "";
-            for (int i = 0; i < 50; i++)
+            while((str = sr.ReadLine())!= null)
             {
-                str = sr.ReadLine();
-                if (str != null)
-                    sb.Append(str);
-                else
-                    break;
+                sb.Append(str);
             }
 
             //建立获取网页标题正则表达式

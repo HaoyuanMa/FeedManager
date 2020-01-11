@@ -100,7 +100,7 @@
                             </li>
                             <li>
                                <a> 收藏夹</a>
-                                <ul>
+                                <ul id="fvt-father">
                                     <%=LoadFavourites() %> 
                                     <li id="li-addfavourite">
                                         <a href="javascript:void(0)" id="addfavourite">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-plus"></i> &nbsp&nbsp 新建收藏夹</a>

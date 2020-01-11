@@ -145,7 +145,7 @@ namespace Feed_Manager
 
         protected void Page_Unload(object sender, EventArgs e)
         {
-            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+          //  Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
 
        
