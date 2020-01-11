@@ -151,10 +151,32 @@ $(document).ready(function () {
         })
     })
 
-    $('#test').click(function () {
+    $('#addrss').click(function () {
+    
         $('#main-wrapper').empty();
-        $('#main-wrapper').append('<a id ="loading"><i class="fa fa-spinner"></i><p>Loading...</p></a>');
+        var html = "<div class='panel panel-info' style='margin-left:10%; margin-right:15%; margin-top:2.5%'>" +
+                "<div class='panel-heading'><h3 class='panel-title'>请输入RSS订阅地址</h3></div>" +
+            "<div class='panel-body'>" +
+            "<div style = 'padding: 100px 100px 100px 100px;' > " +
+            "<form class='bs-example bs-example-form' role='form'>" +
+            "<div class='row' > " +
+            "<div class='minput'>" +
+            "<div class='input-group' > " +
+           // "<div class='input-group-btn' > " +
+                "<label for='category'>分类:&nbsp; </label><select id='cty-select'>";
+        
+        $('.cty-a').each(function () {
+            var ctyname = String($(this).attr("id")).substring(6);
+            html += ("<option value='" + ctyname + "'>" + ctyname + "</option>");
+        });
+        html += ("</select></div><input type='text' class='form-control' id='addurl-input'>" +
+            "</div><br><button type='button' onclick='add()' class='btn btn-default' id='addrssbtn'><i class='fa fa-plus'></i>添加</button></div></form></div></div></div></div>");
+   
+        $('#main-wrapper').append(html);
+
     })
+
+
 
 
 })

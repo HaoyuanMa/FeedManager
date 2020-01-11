@@ -32,7 +32,7 @@
                                 <a id="nagivation" href="javascript:void(0)" data-toggle="tooltip" data-placement="right" title="Navigation"><i class="fa fa-bars fa-lg"></i></a>
                             </li>
                             <li>
-                                <a href="#" data-toggle="tooltip" data-placement="right" title="Add Content to Your Feeds"><i class="fa fa-plus fa-lg"></i></a>
+                                <a id="addrss" href="javascript:void(0)" data-toggle="tooltip" data-placement="right" title="Add Content to Your Feeds"><i class="fa fa-plus fa-lg"></i></a>
                             </li>
                             <li>
                                 <a id="test" href="#" data-toggle="tooltip" data-placement="right" title="Search"><i class="fa fa-search fa-lg"></i></a>
@@ -111,7 +111,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-clock"></i>&nbsp&nbsp 最近阅读</a>
+                               <!-- <a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-clock"></i>&nbsp&nbsp 最近阅读</a> -->
                             </li>
                             <li>
                                         <a><br /></a>
@@ -134,37 +134,9 @@
                  <!-- /Page Header -->
                 <div class="page-inner no-page-title" id="pageinner">
                     <div id="main-wrapper">
-                        <div class="panel panel-info" style="margin-left:10%;margin-right:15%;margin-top:2.5%">
-	                        <div class="panel-heading">
-		                        <h3 class="panel-title">请输入RSS订阅地址</h3>
-	                        </div>
-	                        <div class="panel-body">
-		                        <div style="padding: 100px 100px 100px 100px;">
-	                              <form class="bs-example bs-example-form" role="form" >
-		                                <div class="row" >
-			                                <div class="minput">
-				                                <div class="input-group" >
-					                                <div class="input-group-btn">
-						                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-							                                下拉菜单 
-							                                <span class="caret"></span>
-						                                </button>
-						                                <ul class="dropdown-menu">
-							                                <li><a href="#">功能</a></li>
-							                                <li><a href="#">另一个功能</a></li>
-							                                <li><a href="#">其他</a></li>
-							                                <li class="divider"></li>
-							                                <li><a href="#">分离的链接</a></li>
-						                                </ul>
-					                                </div><!-- /btn-group -->
-					                                <input type="text" class="form-control">
-				                            </div><!-- /input-group -->
-			                            </div><!-- /.col-lg-6 --><br>
-			
-	                            </form>
-                                </div>
-	                        </div>
-                        </div>
+                        
+                    
+
                         </div>
                         <!-- Main Wrapper -->
 
@@ -180,5 +152,21 @@
     <!-- Javascripts -->
     <script src="Scripts/jquery-3.4.1.min.js"></script>
     <script src="Scripts/WebForms/HeaderMenu.js"></script>
+    <script type="text/javascript">
+		function add(){
+            
+            var uname = $('#musername').html();
+            var ctyname = $('#cty-select').val();
+            var url = $('#addurl-input').val();
+
+            $.ajax({
+                url: '/AddRss.ashx?uname=' + uname + '&ctyname=' + ctyname + '&url=' + url,
+                type: 'get',
+                success: function () {
+                    alert("添加成功");
+                }
+            });
+		}
+	</script>
 </body>
 </html>

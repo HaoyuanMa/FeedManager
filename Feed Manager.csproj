@@ -292,6 +292,7 @@
     <Content Include="Content\concept.min.css" />
     <Content Include="Content\custom.less" />
     <Content Include="FeedManager.Master" />
+    <Content Include="AddRss.ashx" />
     <None Include="Dockerfile" />
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
@@ -449,6 +450,9 @@
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddRss.ashx.cs">
+      <DependentUpon>AddRss.ashx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
