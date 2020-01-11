@@ -11,7 +11,7 @@ namespace Feed_Manager.Models
     {
         [Key]
         public int CategoryId { get; set; }
-        public List<Rss> Rsses { get; set; }
+        public virtual ICollection<Rss> Rsses { get; set; }
         public String Name { get; set; }  
         public String UserName { get; set; }
     }

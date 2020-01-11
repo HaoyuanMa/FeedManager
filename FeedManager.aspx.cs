@@ -3,10 +3,12 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel.Syndication;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml;
 
 namespace Feed_Manager
 {
@@ -84,6 +86,8 @@ namespace Feed_Manager
                     HttpContext.Current.User.Identity.Name;
                 }
                 musername.InnerText = HttpContext.Current.User.Identity.Name;
+
+         
             }
             else
             {
@@ -91,6 +95,7 @@ namespace Feed_Manager
             }
             
         }
+
 
         public String LoadFavourites()
         {
@@ -103,13 +108,10 @@ namespace Feed_Manager
                 {
                     html += "<li><a href='javascript:void(0)'class='fvt-a' id = 'fvt-a-" + f.Name.ToString() +
                         "'> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
-                        "'fas fa-angle-right'" +
+                        "'fa fa-star'" +
                         "></i> &nbsp&nbsp " +
                         f.Name.ToString() +
-                        "</a>" +
-                        "<ul id='fvt-u-" + f.Name.ToString() +
-                        "'></ul>" +
-                        "</ li >";
+                        "</a></li >";
                 }
             });
             return html;
@@ -127,13 +129,13 @@ namespace Feed_Manager
                 {
                     html += "<li><a href='javascript:void(0)' class='cty-a' id ='cty-a-" + c.Name.ToString() +
                         "'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
-                        "'fas fa-angle-right'" +
+                        "'fa fa-angle-right'" +
                         "></i> &nbsp&nbsp " +
                         c.Name.ToString() +
                         "</a>" +
                         "<ul id='cty-u-"+ c.Name.ToString() +
-                        "'></ul>" +
-                        "</ li >";
+                        "' style='display:none'></ul>" +
+                        "</li >";
                 }
             });
             return html;
@@ -143,7 +145,7 @@ namespace Feed_Manager
 
         protected void Page_Unload(object sender, EventArgs e)
         {
-            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+          //  Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
 
        

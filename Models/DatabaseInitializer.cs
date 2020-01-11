@@ -27,13 +27,17 @@ namespace Feed_Manager.Models
         {
             EssayId = 0,
             Favourites = null,
-            Url = "http://www.ruanyifeng.com/blog/2020/01/weekly-issue-89.html"
+            Url = "http://www.ruanyifeng.com/blog/2020/01/weekly-issue-89.html",
+            Title = "test",
+            Description = "test"
         };
         private static Essay essay1 = new Essay
         {
             EssayId = 1,
             Favourites = null,
-            Url = "http://www.ruanyifeng.com/blog/2020/01/weekly-issue-89.html"
+            Url = "http://www.ruanyifeng.com/blog/2020/01/weekly-issue-89.html",
+            Title = "test",
+            Description = "test"
         };
 
         private static Favourite favourite0 = new Favourite
@@ -55,19 +59,22 @@ namespace Feed_Manager.Models
         private static Rss rss0 = new Rss
         {
             RssId = 0,
-            Url = "http://www.ruanyifeng.com/blog/atom.xml",
+            Name = "mhy",
+            Url = "http://feeds.feedburner.com/ruanyifeng",
             UserName = "test@test.com"
         };
         private static Rss rss1 = new Rss
         {
             RssId = 1,
-            Url = "http://www.ruanyifeng.com/blog/atom.xml",
+            Name = "mhy",
+            Url = "http://feeds.feedburner.com/ruanyifeng",
             UserName = "test@test.com"
         };
         private static Rss rss2 = new Rss
         {
             RssId = 2,
-            Url = "http://www.ruanyifeng.com/blog/atom.xml",
+            Name = "mhy",
+            Url = "http://feeds.feedburner.com/ruanyifeng",
             UserName = "test@test.com"
         };
 

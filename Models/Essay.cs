@@ -11,8 +11,10 @@ namespace Feed_Manager.Models
     {
         [Key]
         public int EssayId { get; set; }
-        public List<Favourite> Favourites { get; set; }
+        public virtual ICollection<Favourite> Favourites { get; set; }
         public String Url { get; set; }
+        public String Title { get; set; }
+        public String Description { get; set; }
 
     }
 }

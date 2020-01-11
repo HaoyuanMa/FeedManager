@@ -101,6 +101,7 @@ C:\Users\马浩元\Desktop\Feed Manager\bin\System.Diagnostics.DiagnosticSource.
 C:\Users\马浩元\Desktop\Feed Manager\bin\System.Memory.dll
 C:\Users\马浩元\Desktop\Feed Manager\bin\System.Numerics.Vectors.dll
 C:\Users\马浩元\Desktop\Feed Manager\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\马浩元\Desktop\Feed Manager\bin\System.ServiceModel.Syndication.dll
 C:\Users\马浩元\Desktop\Feed Manager\bin\System.Threading.Tasks.Extensions.dll
 C:\Users\马浩元\Desktop\Feed Manager\bin\System.Web.Optimization.dll
 C:\Users\马浩元\Desktop\Feed Manager\bin\WebGrease.dll
@@ -129,6 +130,7 @@ C:\Users\马浩元\Desktop\Feed Manager\bin\System.Diagnostics.DiagnosticSource.
 C:\Users\马浩元\Desktop\Feed Manager\bin\System.Memory.xml
 C:\Users\马浩元\Desktop\Feed Manager\bin\System.Numerics.Vectors.xml
 C:\Users\马浩元\Desktop\Feed Manager\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\马浩元\Desktop\Feed Manager\bin\System.ServiceModel.Syndication.xml
 C:\Users\马浩元\Desktop\Feed Manager\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\马浩元\Desktop\Feed Manager\bin\System.Web.Optimization.xml
 C:\Users\马浩元\Desktop\Feed Manager\bin\Newtonsoft.Json.xml

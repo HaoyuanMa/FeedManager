@@ -11,7 +11,8 @@ namespace Feed_Manager.Models
     {
         [Key]
         public int FavouriteId { get; set; }
-        public List<Essay> Essays { get; set; }
+        public virtual ICollection<Essay> Essays { get; set; }
+        
         public String Name { get; set; }
         public String UserName { get; set; }
     }
