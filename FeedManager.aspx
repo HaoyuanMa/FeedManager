@@ -22,7 +22,7 @@
 </head>
 <body style="overflow:auto">   
     <!-- Page Container -->
-        <div class="page-container">
+        <div class="page-container" style="height:100%">
             <!-- Page Sidebar -->
             <div class="page-sidebar">
                 <div class="page-sidebar-inner">
@@ -65,7 +65,7 @@
             
             <label id ="musername" runat="server" style="display:none"></label>
             <!-- Page Content -->
-            <div class="page-content">
+            <div class="page-content" >
                 <div class="secondary-sidebar">
                     <div class="secondary-sidebar-menu">
                         <ul class="accordion-menu">
@@ -132,8 +132,8 @@
                         </nav>
                     </div>
                  <!-- /Page Header -->
-                <div class="page-inner no-page-title" id="pageinner">
-                    <div id="main-wrapper">
+                <div class="page-inner no-page-title" id="pageinner" style="height:100%">
+                    <div id="main-wrapper" style="height:100%">
                         
                     
 
@@ -154,19 +154,49 @@
     <script src="Scripts/WebForms/HeaderMenu.js"></script>
     <script type="text/javascript">
 		function add(){
-            
+
+            $('#main-wrapper').append('<a id ="loading"><i class="fa fa-spinner"></i>Loading...</a>');
             var uname = $('#musername').html();
             var ctyname = $('#cty-select').val();
             var url = $('#addurl-input').val();
 
             $.ajax({
-                url: '/AddRss.ashx?uname=' + uname + '&ctyname=' + ctyname + '&url=' + url,
+                url: '/AddRss.ashx?uname=' + uname + '&ctyname=' + ctyname + '&url=' + url + '&type=rss',
                 type: 'get',
+                async: false,
                 success: function () {
                     alert("添加成功");
+                    if ($('#cty-u-' + ctyname).hasClass('loaded'))
+                        $('#cty-u-' + ctyname).removeClass('loaded');
+                    $('#loading').remove();
+                },
+                error: function () {
+                    alert("添加失败");
+                    $('#loading').remove();
                 }
             });
-		}
+        }
+        function addfvt() {
+
+            $('#main-wrapper').append('<a id ="loading"><i class="fa fa-spinner"></i>Loading...</a>');
+            var uname = $('#musername').html();
+            var fvtname = $('#fvt-select').val();
+            var url = $('#addfvt-input').val();
+
+            $.ajax({
+                url: '/AddRss.ashx?uname=' + uname + '&fvtname=' + fvtname + '&url=' + url + '&type=essay',
+                type: 'get',
+                async: false,
+                success: function () {
+                    alert("添加成功");
+                    $('#loading').remove();
+                },
+                error: function () {
+                    alert("添加失败");
+                    $('#loading').remove();
+                }
+            });
+        }
 	</script>
 </body>
 </html>

@@ -13,6 +13,8 @@ namespace Feed_Manager.Models
         public int EssayId { get; set; }
         public virtual ICollection<Favourite> Favourites { get; set; }
         public String Url { get; set; }
+        public String Title { get; set; }
+        public String Description { get; set; }
 
     }
 }

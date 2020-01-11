@@ -32,12 +32,12 @@ namespace Feed_Manager
             String link = feed.Links.ToList<SyndicationLink>().FirstOrDefault().Uri.ToString();
             String html = "<div class='content-header'>" +
                              "<nav aria-label='breadcrumb'></nav><a href='" + link + "'target='_blank'><h1 class='page-title'>" +
-                             (rss.Name.ToString() + "</h1></a></div><div class='row'>" +
+                             rss.Name.ToString() + "</h1></a></div><div class='row'>" +
                              "<table class='table table-hover'><caption></caption>" +
                              "<thead><tr>" +
                              "<th width = '10px'></th>" +
                              "<th width = '10px'></th>" +
-                             "<th width='75%'></th></thead><tbody>");
+                             "<th width='75%'></th></thead><tbody>";
 
             List<SyndicationItem> syndicationItems = feed.Items.ToList<SyndicationItem>();
             foreach(SyndicationItem item in syndicationItems)
