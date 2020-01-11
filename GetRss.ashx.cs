@@ -17,34 +17,42 @@ namespace Feed_Manager
 
         public void ProcessRequest(HttpContext context)
         {
-            String html = "<div class='content - header'>" +
-                "<nav aria-label='breadcrumb'></nav><h1 class='page-title'>";
+            
 
             String uname = context.Request.QueryString["uname"].ToString();
             int rssid = int.Parse(context.Request.QueryString["rssid"].ToString());
 
             CategoryContext categoryContext = new CategoryContext();
             Rss rss = categoryContext.Rsses.Where(r => r.RssId == rssid).FirstOrDefault();
-            html += ( rss.Name.ToString() + "</h1></div><div class='row'>"+
-                           "<table class='table table-hover'><caption></caption>"+
-                              "<thead><tr>" +
-                              "<th width = '10px'></th>" +
-                              "<th width = '10px'></th>" +
-                              "<th width='75%'></th></thead><tbody>");
+           
 
             var reader = XmlReader.Create(rss.Url);
             var feed = SyndicationFeed.Load(reader);
             String title = feed.Title.Text.ToString();
+            String link = feed.Links.ToList<SyndicationLink>().FirstOrDefault().Uri.ToString();
+            String html = "<div class='content-header'>" +
+                             "<nav aria-label='breadcrumb'></nav><a href='" + link + "'><h1 class='page-title'>"+
+                             (rss.Name.ToString() + "</h1></a></div><div class='row'>" +
+                             "<table class='table table-hover'><caption></caption>" +
+                             "<thead><tr>" +
+                             "<th width = '10px'></th>" +
+                             "<th width = '10px'></th>" +
+                             "<th width='75%'></th></thead><tbody>");
+
             List<SyndicationItem> syndicationItems = feed.Items.ToList<SyndicationItem>();
             foreach(SyndicationItem item in syndicationItems)
             {
                 String itemtitle = item.Title.Text.ToString();
                 String itemlink = item.Links.ToList<SyndicationLink>().FirstOrDefault().Uri.ToString();
                 String description = item.Summary.Text.ToString();
-                description = trans(description.Substring(0, 1024));
-                html += ("<tr><td><a href='javascript:void(0)'><i class='fas fa-bookmark-o' aria-hidden='true'></i></a></td>" +
-                    "<td><a href='javascript:void(0)'><i class='fas fa-star-o'aria-hidden='true'></i></a></td>" +
-                    "<td style=' overflow: hidden; white - space: nowrap; text - overflow: ellipsis '><a href='" + itemlink + "' target='_blank'><b>" + itemtitle + "</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + description + "</a></td></tr>");
+                if(description.Length>1024)
+                {
+                    description = description.Substring(0, 1024);
+                }
+                description = trans(description);
+                html += ("<tr><td><a href='javascript:void(0)'><i class='fa fa-bookmark-o' aria-hidden='true'></i></a></td>" +
+                    "<td><a href='javascript:void(0)'><i class='fa fa-star-o'aria-hidden='true'></i></a></td>" +
+                    "<td style=' overflow: hidden; white-space: nowrap; text-overflow: ellipsis '><a href='" + itemlink + "target='_blank'><b>" + itemtitle + "</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + description + "</a></td></tr>");
 
             }
 
@@ -76,7 +84,7 @@ namespace Feed_Manager
                 {
                     if (left.Count == 0)
                     {
-                        break;
+                        continue;
                     }
                     int start = left.Pop();
                     for (int j = start; j <= i; j++)

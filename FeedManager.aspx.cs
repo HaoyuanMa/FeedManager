@@ -108,7 +108,7 @@ namespace Feed_Manager
                 {
                     html += "<li><a href='javascript:void(0)'class='fvt-a' id = 'fvt-a-" + f.Name.ToString() +
                         "'> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
-                        "'fas fa-star'" +
+                        "'fa fa-star'" +
                         "></i> &nbsp&nbsp " +
                         f.Name.ToString() +
                         "</a></li >";
@@ -129,7 +129,7 @@ namespace Feed_Manager
                 {
                     html += "<li><a href='javascript:void(0)' class='cty-a' id ='cty-a-" + c.Name.ToString() +
                         "'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
-                        "'fas fa-angle-right'" +
+                        "'fa fa-angle-right'" +
                         "></i> &nbsp&nbsp " +
                         c.Name.ToString() +
                         "</a>" +

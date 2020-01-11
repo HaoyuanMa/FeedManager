@@ -51,7 +51,7 @@ $(document).ready(function () {
         
         var html = "";
         html += "<li><a href='javascript:void(0)'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
-            "'fas fa-angle-right'" +
+            "'fa fa-angle-right'" +
             "></i> &nbsp&nbsp " +
             name +
             "</a></ li >";
@@ -75,7 +75,7 @@ $(document).ready(function () {
         var uname = $('#musername').html();
         var html = "";
         html += "<li><a href='javascript:void(0)'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class=" +
-            "'fas fa-angle-right'" +
+            "'fa fa-angle-right'" +
             "></i> &nbsp&nbsp " +
             name +
             "</a></ li >";
@@ -113,20 +113,48 @@ $(document).ready(function () {
         })
 
     })
-    
+
+    currentget = null;
     
     $('#rss-father').on('click','.rss-a', function () {
         $(this).each(function () {
+
+            if (currentget) {
+                currentget.abort();
+                currentget = null;
+            }
+            
+            $('#main-wrapper').empty();
+            $('#main-wrapper').append('<a id ="loading"><i class="fa fa-spinner"></i>Loading...</a>');
+
             var rss = $(this).attr('id');
             var rssid = String(rss).substring(6);
             var uname = $('#musername').html();
-            $.get('/GetRss.ashx', { 'rssid': rssid, 'uname': uname }, function (date) {
+
+            //$.ajaxSettings.async = false;
+           /* currentget = $.get('/GetRss.ashx', { 'rssid': rssid, 'uname': uname }, function (date) {
+                $('#loading').remove();
                 $('#main-wrapper').append(date);
-            })   
+            });*/
+
+            currentget = $.ajax({
+                url: '/GetRss.ashx?uname=' + uname + '&rssid=' + rssid,
+                type: 'get',
+                success: function (date) {
+                    $('#loading').remove();
+                    $('#main-wrapper').append(date);
+                }
+            });
+            //$.ajaxSettings.async = true;
+            //currentget = null;
+           
         })
     })
 
-
+    $('#test').click(function () {
+        $('#main-wrapper').empty();
+        $('#main-wrapper').append('<a id ="loading"><i class="fa fa-spinner"></i><p>Loading...</p></a>');
+    })
 
 
 })

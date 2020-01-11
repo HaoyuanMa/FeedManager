@@ -98,10 +98,67 @@
 
 table {
     table-layout: fixed;
+    
 }
 
 td {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.row {
+    padding-top: 20px;
+}
+
+.count-header {
+    element .style
+
+{
+}
+
+.fx .presentation-0 h1 {
+    font-size: 26px;
+    line-height: 40px;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) .fx .col-md-6 {
+    width: 50%;
+}
+
+@media (min-width: 768px) .fx .col-md-1, .fx .col-md-2, .fx .col-md-3, .fx .col-md-4, .fx .col-md-5, .fx .col-md-6, .fx .col-md-7, .fx .col-md-8, .fx .col-md-9, .fx .col-md-10, .fx .col-md-11, .fx .col-md-12, .fx.fx-mobile .row .col-md-1, .fx.fx-mobile .row .col-md-2, .fx.fx-mobile .row .col-md-3, .fx.fx-mobile .row .col-md-4, .fx.fx-mobile .row .col-md-5, .fx.fx-mobile .row .col-md-6, .fx.fx-mobile .row .col-md-7, .fx.fx-mobile .row .col-md-8, .fx.fx-mobile .row .col-md-9, .fx.fx-mobile .row .col-md-10, .fx.fx-mobile .row .col-md-11, .fx.fx-mobile .row .col-md-12 {
+    float: left;
+}
+
+.fx .col-xs-6 {
+    width: 50%;
+}
+
+.fx .col-xs-1, .fx .col-xs-2, .fx .col-xs-3, .fx .col-xs-4, .fx .col-xs-5, .fx .col-xs-6, .fx .col-xs-7, .fx .col-xs-8, .fx .col-xs-9, .fx .col-xs-10, .fx .col-xs-11, .fx .col-xs-12, .fx.fx-mobile .row .col-xs-1, .fx.fx-mobile .row .col-xs-2, .fx.fx-mobile .row .col-xs-3, .fx.fx-mobile .row .col-xs-4, .fx.fx-mobile .row .col-xs-5, .fx.fx-mobile .row .col-xs-6, .fx.fx-mobile .row .col-xs-7, .fx.fx-mobile .row .col-xs-8, .fx.fx-mobile .row .col-xs-9, .fx.fx-mobile .row .col-xs-10, .fx.fx-mobile .row .col-xs-11, .fx.fx-mobile .row .col-xs-12 {
+    float: left;
+}
+
+.fx .col-xs-1, .fx .col-xs-2, .fx .col-xs-3, .fx .col-xs-4, .fx .col-xs-5, .fx .col-xs-6, .fx .col-xs-7, .fx .col-xs-8, .fx .col-xs-9, .fx .col-xs-10, .fx .col-xs-11, .fx .col-xs-12, .fx .col-sm-1, .fx .col-sm-2, .fx .col-sm-3, .fx .col-sm-4, .fx .col-sm-5, .fx .col-sm-6, .fx .col-sm-7, .fx .col-sm-8, .fx .col-sm-9, .fx .col-sm-10, .fx .col-sm-11, .fx .col-sm-12, .fx .col-md-1, .fx .col-md-2, .fx .col-md-3, .fx .col-md-4, .fx .col-md-5, .fx .col-md-6, .fx .col-md-7, .fx .col-md-8, .fx .col-md-9, .fx .col-md-10, .fx .col-md-11, .fx .col-md-12, .fx .col-lg-1, .fx .col-lg-2, .fx .col-lg-3, .fx .col-lg-4, .fx .col-lg-5, .fx .col-lg-6, .fx .col-lg-7, .fx .col-lg-8, .fx .col-lg-9, .fx .col-lg-10, .fx .col-lg-11, .fx .col-lg-12, .fx .col-xl-1, .fx .col-xl-2, .fx .col-xl-3, .fx .col-xl-4, .fx .col-xl-5, .fx .col-xl-6, .fx .col-xl-7, .fx .col-xl-8, .fx .col-xl-9, .fx .col-xl-10, .fx .col-xl-11, .fx .col-xl-12, .fx.fx-mobile .row .col-xs-1, .fx.fx-mobile .row .col-xs-2, .fx.fx-mobile .row .col-xs-3, .fx.fx-mobile .row .col-xs-4, .fx.fx-mobile .row .col-xs-5, .fx.fx-mobile .row .col-xs-6, .fx.fx-mobile .row .col-xs-7, .fx.fx-mobile .row .col-xs-8, .fx.fx-mobile .row .col-xs-9, .fx.fx-mobile .row .col-xs-10, .fx.fx-mobile .row .col-xs-11, .fx.fx-mobile .row .col-xs-12, .fx.fx-mobile .row .col-sm-1, .fx.fx-mobile .row .col-sm-2, .fx.fx-mobile .row .col-sm-3, .fx.fx-mobile .row .col-sm-4, .fx.fx-mobile .row .col-sm-5, .fx.fx-mobile .row .col-sm-6, .fx.fx-mobile .row .col-sm-7, .fx.fx-mobile .row .col-sm-8, .fx.fx-mobile .row .col-sm-9, .fx.fx-mobile .row .col-sm-10, .fx.fx-mobile .row .col-sm-11, .fx.fx-mobile .row .col-sm-12, .fx.fx-mobile .row .col-md-1, .fx.fx-mobile .row .col-md-2, .fx.fx-mobile .row .col-md-3, .fx.fx-mobile .row .col-md-4, .fx.fx-mobile .row .col-md-5, .fx.fx-mobile .row .col-md-6, .fx.fx-mobile .row .col-md-7, .fx.fx-mobile .row .col-md-8, .fx.fx-mobile .row .col-md-9, .fx.fx-mobile .row .col-md-10, .fx.fx-mobile .row .col-md-11, .fx.fx-mobile .row .col-md-12, .fx.fx-mobile .row .col-lg-1, .fx.fx-mobile .row .col-lg-2, .fx.fx-mobile .row .col-lg-3, .fx.fx-mobile .row .col-lg-4, .fx.fx-mobile .row .col-lg-5, .fx.fx-mobile .row .col-lg-6, .fx.fx-mobile .row .col-lg-7, .fx.fx-mobile .row .col-lg-8, .fx.fx-mobile .row .col-lg-9, .fx.fx-mobile .row .col-lg-10, .fx.fx-mobile .row .col-lg-11, .fx.fx-mobile .row .col-lg-12, .fx.fx-mobile .row .col-xl-1, .fx.fx-mobile .row .col-xl-2, .fx.fx-mobile .row .col-xl-3, .fx.fx-mobile .row .col-xl-4, .fx.fx-mobile .row .col-xl-5, .fx.fx-mobile .row .col-xl-6, .fx.fx-mobile .row .col-xl-7, .fx.fx-mobile .row .col-xl-8, .fx.fx-mobile .row .col-xl-9, .fx.fx-mobile .row .col-xl-10, .fx.fx-mobile .row .col-xl-11, .fx.fx-mobile .row .col-xl-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.fx header h1 {
+    margin-bottom: 0;
+}
+
+.page-title {
+    color: #333333;
+    font-family: sans-serif;
+    font-size: 2.125rem;
+    font-weight: bold;
+    letter-spacing: -0.04em;
+    line-height: 1.25em;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    text-align: left;
+    text-transform: none;
 }
