@@ -9,7 +9,7 @@
     </title>
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-4.2.1.css">
+    <link rel="stylesheet" href="Content/bootstrap.min.css">
     <link href="Content/font-awesome.min.css" rel="stylesheet">
      
     <link href="Content/switchery.min.css" rel="stylesheet"> 
@@ -134,7 +134,37 @@
                  <!-- /Page Header -->
                 <div class="page-inner no-page-title" id="pageinner">
                     <div id="main-wrapper">
-
+                        <div class="panel panel-info" style="margin-left:10%;margin-right:15%;margin-top:2.5%">
+	                        <div class="panel-heading">
+		                        <h3 class="panel-title">请输入RSS订阅地址</h3>
+	                        </div>
+	                        <div class="panel-body">
+		                        <div style="padding: 100px 100px 100px 100px;">
+	                              <form class="bs-example bs-example-form" role="form" >
+		                                <div class="row" >
+			                                <div class="minput">
+				                                <div class="input-group" >
+					                                <div class="input-group-btn">
+						                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							                                下拉菜单 
+							                                <span class="caret"></span>
+						                                </button>
+						                                <ul class="dropdown-menu">
+							                                <li><a href="#">功能</a></li>
+							                                <li><a href="#">另一个功能</a></li>
+							                                <li><a href="#">其他</a></li>
+							                                <li class="divider"></li>
+							                                <li><a href="#">分离的链接</a></li>
+						                                </ul>
+					                                </div><!-- /btn-group -->
+					                                <input type="text" class="form-control">
+				                            </div><!-- /input-group -->
+			                            </div><!-- /.col-lg-6 --><br>
+			
+	                            </form>
+                                </div>
+	                        </div>
+                        </div>
                         </div>
                         <!-- Main Wrapper -->
 

@@ -31,7 +31,7 @@ namespace Feed_Manager
             String title = feed.Title.Text.ToString();
             String link = feed.Links.ToList<SyndicationLink>().FirstOrDefault().Uri.ToString();
             String html = "<div class='content-header'>" +
-                             "<nav aria-label='breadcrumb'></nav><a href='" + link + "'><h1 class='page-title'>"+
+                             "<nav aria-label='breadcrumb'></nav><a href='" + link + "'target='_blank'><h1 class='page-title'>" +
                              (rss.Name.ToString() + "</h1></a></div><div class='row'>" +
                              "<table class='table table-hover'><caption></caption>" +
                              "<thead><tr>" +
@@ -52,7 +52,7 @@ namespace Feed_Manager
                 description = trans(description);
                 html += ("<tr><td><a href='javascript:void(0)'><i class='fa fa-bookmark-o' aria-hidden='true'></i></a></td>" +
                     "<td><a href='javascript:void(0)'><i class='fa fa-star-o'aria-hidden='true'></i></a></td>" +
-                    "<td style=' overflow: hidden; white-space: nowrap; text-overflow: ellipsis '><a href='" + itemlink + "target='_blank'><b>" + itemtitle + "</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + description + "</a></td></tr>");
+                    "<td style=' overflow: hidden; white-space: nowrap; text-overflow: ellipsis '><a href='" + itemlink + "'target='_blank'><b>" + itemtitle + "</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + description + "</a></td></tr>");
 
             }
 
