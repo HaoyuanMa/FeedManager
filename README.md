@@ -23,6 +23,6 @@
 
 ----
 
-[pic-3.3.0]: https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1682933a-c290-4a19-a517-c44d14df20fc/f52f1930-4637-476c-8888-b9b7b889af88.png
-[pic-3.3.1]: https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1682933a-c290-4a19-a517-c44d14df20fc/005514d1-07d4-4153-b801-9d462abba4dc.png
-[pic-3.3.2]: https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1682933a-c290-4a19-a517-c44d14df20fc/e6f8beb4-463e-41b0-9fd4-f58e728e7abb.png
+[pic-3.3.0]: https://images.wait4echo.love/Works/feed-manager/wl-fm-mainPage.png
+[pic-3.3.1]: https://images.wait4echo.love/Works/feed-manager/wl-fm-sideBar.png
+[pic-3.3.2]: https://images.wait4echo.love/Works/feed-manager/wl-fm-addRss.png
